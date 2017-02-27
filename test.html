@@ -29,8 +29,8 @@
 	<input type="hidden" id="currentStage" value="1" />
 	<div id="querycol">
 		<div id="querycol_con">
-			<span id="processStatusMessage"></span><br />
-			<span id="note"></span><br />
+			<div><span id="processStatusMessage"></span></div>
+			<div><span id="note"></span></div>
 			<input type="button" id="btn_1" value="Next" onmousedown="clickEvent(Ext.getDom('currentStage').value)" />
 		</div>
 	</div>
@@ -39,7 +39,7 @@
 		<div id="querycol_con1">
 			<input type="radio" name="rad" id="rad-1" checked="checked" /><label for="rad-1">Upload ODM Raw Data</label>
 			<div style="padding: 5px 16px;">
-				<input type="file" name="upload_rpt1"><input type="button" id="upload_rpt_1" value="Upload" onclick="uploadClick(this.id)" />
+				<input type="file" name="upload_rpt1"><input type="button" id="upload_rpt_1" value="Upload" onclick="uploadClick(1)" />
 			</div>
 		</div>
 	</div>
@@ -48,17 +48,17 @@
 		<div id="querycol_con2">
 			<input type="radio" name="rad" id="rad-2" /><label for="rad-2">Upload ODM Raw Data (Initial)</label>
 			<div style="padding: 5px 16px;">
-				<input type="file" name="upload_rpt2"><input type="button" id="upload_rpt_2" value="Upload" onclick="uploadClick(this.id)" /><br />
+				<input type="file" name="upload_rpt2"><input type="button" id="upload_rpt_2" value="Upload" onclick="uploadClick(2)" /><br />
 			</div>
 			
 			<input type="radio" name="rad" id="rad-4" /><label for="rad-4">Update ODM Raw Data (Update)</label>
 			<div style="padding: 5px 16px;">
-				<input type="file" name="upload_rpt4"><input type="button" id="upload_rpt_4" value="Upload" onclick="uploadClick(this.id)" /><br />
+				<input type="file" name="upload_rpt4"><input type="button" id="upload_rpt_4" value="Upload" onclick="uploadClick(4)" /><br />
 			</div>
 			
 			<input type="radio" name="rad" id="rad-5" /><label for="rad-5">Update RMA Special</label>
 			<div style="padding: 5px 16px;">
-				<input type="file" name="upload_rpt5"><input type="button" id="upload_rpt_5" value="Upload" onclick="uploadClick(this.id)" /><br />
+				<input type="file" name="upload_rpt5"><input type="button" id="upload_rpt_5" value="Upload" onclick="uploadClick(5)" /><br />
 			</div>
 			
 			<input type="radio" name="rad" id="rad-3" onclick="radClick(this.id)" /><label for="rad-3">Export ODM Raw Data</label><br />

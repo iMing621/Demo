@@ -64,16 +64,13 @@ Ext.onReady(function(){
 });
 
 function clickEvent(type){
-	
-	//Ext.get('btn_'+type).on('click', function(e){
-        Ext.MessageBox.confirm('Confirm', 'Are you sure you want to do that?', function(btn){
-			if(btn == 'yes'){
-				type++;
-				onConfirm(type);
-			}
-		});
-		
-    //});
+	clearMsg();
+	Ext.MessageBox.confirm('Confirm', 'Are you sure you want to do that?', function(btn){
+		if(btn == 'yes'){
+			type++;
+			onConfirm(type);
+		}
+	});
 }
 
 function onConfirm(type){
@@ -155,7 +152,7 @@ function drawComboBox(type){
 	if ( typeof Ext.getCmp('combobox-'+type+'-states') == 'undefined'){
 		
 		var radItems = [];
-		for(i=0; i<store2.data.length; i++){
+		for(i=0; i<10; i++){
 			var lab = store2.data.items[i].json[1];
 			var name = type + '-cb-col-' + i;
 			radItems.push(
@@ -188,14 +185,18 @@ function showMsg(color, msg){
 	Ext.getDom('processStatusMessage').innerHTML=html;
 }
 
-function uploadClick(type){
+function clearMsg(){
 	Ext.getDom('processStatusMessage').innerHTML='';
-	
+}
+
+function uploadClick(type){
+	clearMsg();
+	Ext.getDom('rad-'+type).checked = true;
 	showMsg('green', 'Upload Report (' + type + ') Success!' );
 }
 
 function exportClick(type){
-	Ext.getDom('processStatusMessage').innerHTML='';
+	clearMsg();
 	
 	showMsg('green', 'Export Report (' + type + ') Success!' );
 }
